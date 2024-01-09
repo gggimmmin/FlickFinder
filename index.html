@@ -10,49 +10,50 @@
   </head>
   <body>
     <header>
-      <h1>
-        Flick<span>Finder</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="green"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-search"
-          style="transform: translateX(-13px)"
-        >
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.3-4.3" />
-        </svg>
-      </h1>
+      <a href="index.html">
+        <h1>
+          Flick<span>Finder</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="green"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search"
+            style="transform: translateX(-13px)"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </h1>
+      </a>
+      <form id="search-form">
+        <label>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="green"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search"
+            style="transform: translate(40px, 7px)"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </label>
+        <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
+        <button id="search-btn">검색</button>
+      </form>
     </header>
-    <div>ddd</div>
-    <form id="search-form">
-      <label>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="green"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-search"
-          style="transform: translate(20px, 7px)"
-        >
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.3-4.3" />
-        </svg>
-      </label>
-      <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
-      <button id="search-btn">검색</button>
-    </form>
     <ul id="card-list"></ul>
   </body>
   <footer>FlickFinder - Movie Search WEB</footer>
