@@ -20,11 +20,14 @@ a {
 }
 
 header {
+  position: fixed;
   background-color: var(--bg-header-color);
   height: 120px;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
+  width: 100%;
+  z-index: 1000;
 }
 
 header h1 {
@@ -81,6 +84,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(5, 0.5fr);
   list-style: none;
+  padding-top: 150px;
 }
 
 .movie-card {
