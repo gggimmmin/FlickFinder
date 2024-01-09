@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FlickFinder - Movie Search web</title>
+    <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </head>
   <body>
-    <header></header>
-    <form></form>
-    <ul></ul>
+    <header>
+      <h1>FlickFinder</h1>
+    </header>
+    <form id="search-form">
+      <label>영화 검색 :</label>
+      <input
+        name="searchValue"
+        type="text"
+        id="search-input"
+        placeholder="영화 제목을 검색해 보세요"
+      />
+      <button id="search-btn">검색</button>
+    </form>
+    <ul id="card-list"></ul>
   </body>
 </html>
