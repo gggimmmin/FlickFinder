@@ -1,6 +1,6 @@
 :root {
-  --bg-header-color: #ffe194;
-  --bg-card-color: bisque;
+  --bg-header-color: #fbf9f1;
+  --bg-card-color: #fbf9f1;
 }
 
 * {
@@ -16,16 +16,31 @@ body {
 
 header {
   background-color: var(--bg-header-color);
-  height: 100px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+header h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+header span {
+  color: green;
+}
+
+footer {
+  text-align: center;
+  color: slategrey;
+  margin: 30px 30px;
+}
+
 #search-form {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
 #search-form label {
@@ -43,16 +58,39 @@ header {
   padding: 5px;
 }
 
+#search-input {
+  width: 550px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid green;
+}
+
+#search-input::placeholder {
+  text-align: center;
+}
+
+#search-btn {
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  transform: translateX(-70px);
+  border: 1px solid gray;
+}
+
+#search-btn:hover {
+  background-color: rgb(30, 158, 30);
+}
+
 #card-list {
   display: grid;
-  grid-template-columns: repeat(4, 0.5fr);
+  grid-template-columns: repeat(5, 0.5fr);
   list-style: none;
 }
 
 .movie-card {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 30px;
   width: 300px;
   justify-self: center;
   background-color: var(--bg-card-color);
