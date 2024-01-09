@@ -1,0 +1,76 @@
+:root {
+  --bg-header-color: #ffe194;
+  --bg-card-color: bisque;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../assets/bg.png") center/cover no-repeat;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--bg-header-color);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-form {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+
+#search-form label {
+  font-size: 25px;
+}
+
+#search-form input {
+  margin-left: 20px;
+  min-width: 200px;
+  padding: 5px 10px;
+}
+
+#search-form button {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+#card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+.movie-card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  justify-self: center;
+  background-color: var(--bg-card-color);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 100ms ease-in;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-card .movie-title {
+  margin-bottom: 10px;
+}

@@ -1,3 +1,13 @@
-// 1. 영화 데이터를 가져와서 화면에 나타내기
+import { generateMovieCards } from "./movie.js";
+import { handleSearch } from "./search.js";
 
-// 2. 영화 검색
+generateMovieCards();
+
+const searchInput = document.querySelector("#search-input");
+searchInput.focus();
+
+const form = document.querySelector("#search-form");
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  handleSearch(searchInput.value);
+});
