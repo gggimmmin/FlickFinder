@@ -4,9 +4,10 @@ export const handleSearch = searchKeyword => {
 
   movieCards.forEach(card => {
     const title = card.querySelector(".movie-title").textContent.toLowerCase();
-    const searchedValue = searchKeyword.toLowerCase();
+    const searchedValue = searchKeyword.replace(/\s/g, "").toLowerCase();
+    const titleWithoutSpaces = title.replace(/\s/g, "");
 
-    if (title.includes(searchedValue)) {
+    if (titleWithoutSpaces.includes(searchedValue)) {
       card.style.display = "block";
     } else {
       card.style.display = "none";

@@ -17,7 +17,7 @@ export const generateMovieCards = async () => {
 
   cardList.addEventListener("click", handleClickCard);
 
-  // 이벤트 위임: 하위요소에서 발생한 이벤트를 상위요소에서 처리하도록 해줍니다.
+  // 이벤트 위임: 하위요소에서 발생한 이벤트를 상위요소에서 처리
   function handleClickCard({ target }) {
     // 카드 외 영역 클릭 시 무시
     if (target === cardList) return;
