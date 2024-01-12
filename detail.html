@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlickFinder - Movie Search web - detail page</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script type="module" src="./src/main.js"></script>
+    <script src="./src/detail.js" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <h1 class="apptitle">
+          Flick<span>Finder</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="green"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search"
+            style="transform: translateX(-13px)"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </h1>
+      </a>
+      <form id="search-form">
+        <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
+        <button id="search-btn">검색</button>
+      </form>
+
+      <button id="toprate">TOP RATED</button>
+      <button id="popular">POPULAR</button>
+    </header>
+
+    <div id="details-container"></div>
+  </body>
+  <footer>FlickFinder - Movie Search WEB</footer>
+</html>
