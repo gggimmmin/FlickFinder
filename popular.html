@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlickFinder - Movie Search web - detail page</title>
+    <title>FlickFinder - Popular Movies</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./src/detail.js" type="module"></script>
+    <script type="module" src="/src/popular.js"></script>
   </head>
   <body>
     <header>
       <a href="index.html">
-        <h1 class="apptitle">
+        <h1>
           Flick<span>Finder</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,16 +32,39 @@
         </h1>
       </a>
       <form id="search-form">
+        <label>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="green"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search"
+            style="transform: translate(40px, 7px)"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </label>
         <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
         <button id="search-btn">검색</button>
       </form>
       <div class="header-menu">
         <button id="toprate"><a href="./index.html">TOP RATED</a></button>
-        <button id="popular"><a href="./popular.html">POPULAR</a></button>
+        <button id="popular">POPULAR</button>
       </div>
     </header>
-
-    <div id="details-container"></div>
+    <div class="header-box">
+      <img src="/img/movie-theater.jpg" />
+      <div class="header-box_title">
+        <h1>Popular Movies.</h1>
+      </div>
+    </div>
+    <ul id="card-list"></ul>
   </body>
   <footer>FlickFinder - Movie Search WEB</footer>
 </html>
