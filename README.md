@@ -34,8 +34,8 @@
 ### Installation
 
 ```bash
-$ git clone 
-$ cd
+$ git clone https://github.com/gggimmmin/FlickFinder.git
+$ cd FlickFinder
 ```
 
 <br />
