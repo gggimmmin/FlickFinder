@@ -6,13 +6,17 @@
     <title>FlickFinder - Movie Search web - detail page</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./src/detail.js" type="module"></script>
+    <link rel="stylesheet" href="./style/detail.css" />
+    <script type="module" src="./src/detail.js"></script>
+    <script type="module" src="./src/searchEvent.js"></script>
+    <script type="module" src="./src/localstorage.js"></script>
   </head>
   <body>
     <header>
       <a href="index.html">
         <h1 class="apptitle">
-          Flick<span>Finder</span>
+          Flick
+          <span>Finder</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -36,12 +40,26 @@
         <button id="search-btn">검색</button>
       </form>
       <div class="header-menu">
-        <button id="toprate"><a href="./index.html">TOP RATED</a></button>
-        <button id="popular"><a href="./popular.html">POPULAR</a></button>
+        <button id="toprate">
+          <a href="./toprate.html">TOP RATED</a>
+        </button>
+        <button id="popular">
+          <a href="./popular.html">POPULAR</a>
+        </button>
+        <button id="nowPlaying"><a href="./nowplaying.html">NOW PLAYING</a></button>
       </div>
     </header>
-
-    <div id="details-container"></div>
+    <div>
+      <div id="details-container"></div>
+      <div id="commentCount"></div>
+      <form id="inputForm">
+        <input type="text" id="username" placeholder="닉네임" />
+        <input type="password" id="password" placeholder="비밀번호" required />
+        <textarea type="text" id="reviewInput" placeholder="리뷰를 작성하세요"></textarea>
+        <button>저장</button>
+      </form>
+      <div id="commentList"></div>
+    </div>
+    <footer>FlickFinder - Movie Search WEB</footer>
   </body>
-  <footer>FlickFinder - Movie Search WEB</footer>
 </html>

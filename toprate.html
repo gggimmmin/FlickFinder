@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlickFinder - Toprated Movies</title>
+    <title>FlickFinder - Movie Search web</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/toprate.js"></script>
+    <script type="module" src="./src/searchEvent.js"></script>
   </head>
   <body>
     <header>
@@ -32,17 +33,42 @@
         </h1>
       </a>
       <form id="search-form">
+        <label>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="green"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-search"
+            style="transform: translate(40px, 1px)"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </label>
         <input name="searchValue" type="text" id="search-input" placeholder="영화 제목을 검색해 보세요" />
         <button id="search-btn">검색</button>
       </form>
       <div class="header-menu">
-        <button id="toprate">TOP RATED</button>
-        <button onClick="location.href='./popular.html'" id="popular">POPULAR</button>
+        <button id="toprate"><a href="./toprate.html">TOP RATED</a></button>
+        <button id="popular"><a href="./popular.html">POPULAR</a></button>
+        <button id="nowPlaying"><a href="./nowplaying.html">NOW PLAYING</a></button>
       </div>
     </header>
-    <div class="header-sort">
-      <button id="sorttoprate">TOP RATED정렬</button>
-      <button id="sortpopular">popular정렬</button>
+    <div class="header-box">
+      <img src="img/movie-theater.jpg" />
+      <div class="header-box_title">
+        <h1>Top Rated Movies.</h1>
+      </div>
+    </div>
+    <div class="header-sort" id="sortButton">
+      <button id="sorttoprate" class="btn-hover color-5">평점 순</button>
+      <button id="sortpopular" class="btn-hover color-6">인기도 순</button>
     </div>
     <ul id="card-list"></ul>
   </body>

@@ -10,9 +10,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background: url("../assets/bg.png") center/cover no-repeat;
   min-height: 100vh;
-  margin-top: 75px;
+  margin-top: 85px;
 }
 
 a {
@@ -37,10 +39,15 @@ header h1 {
   font-size: 30px;
   font-weight: bold;
   margin-left: 30px;
+  white-space: nowrap;
 }
 
 header span {
   color: green;
+}
+
+body > header > a > h1 > svg {
+  margin-left: 5px;
 }
 
 .header-menu span {
@@ -50,17 +57,29 @@ header span {
 
 .header-box img {
   width: 100%;
-  height: auto;
+  height: 400px;
   display: block;
 }
 
 .header-box_title {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 62%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: left;
   width: 100%;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header-box_title h1 {
@@ -68,6 +87,7 @@ header span {
   font-size: 50px;
   font-weight: bold;
   margin: -250px 0 0;
+  animation: fadeInDown 1s ease-out;
 }
 
 footer {
@@ -89,6 +109,7 @@ footer {
   height: 40px;
   border-radius: 10px;
   border: 1px solid green;
+  text-indent: 50px;
 }
 
 #search-form button {
@@ -121,9 +142,59 @@ footer {
   cursor: pointer;
   background-color: var(--bg-header-color);
 }
-.header-sort > button {
-  margin-top: 15px;
+
+.header-sort {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-5 {
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.btn-hover.color-6 {
+  background-image: linear-gradient(to right, #009245, #fcee21, #00a8c5, #d9e021);
+  box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+
+.header-sort button {
+  margin-right: 15px;
+  text-align: center;
+}
+
 #search-input::placeholder {
   text-align: center;
 }
@@ -131,23 +202,23 @@ footer {
 #search-btn:hover {
   background-color: rgb(30, 158, 30);
 }
-/*flex-wrap설정해서 창 줄어들면 아래로 내려가게*/
+
 #card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
   list-style: none;
-  padding-top: 40px;
+  padding-top: 25px;
 }
-/*카드하나*/
+
 .movie-card {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24); */
   margin: 10px;
   padding: 30px;
   width: 300px;
   justify-self: center;
-  background-color: var(--bg-card-color);
+  /* background-color: var(--bg-card-color); */
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
@@ -159,11 +230,12 @@ footer {
 }
 
 .movie-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.3);
+  z-index: 2;
 }
 
 .movie-card img {
-  width: 100%;
+  width: 120%;
   border-radius: 10px;
 }
 
@@ -227,10 +299,278 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  line-height: 20px;
 }
-.movie-card p + p,
-.movie-card p + p + p {
+
+.movie-desc {
+  line-height: 20px;
+}
+
+/* 정렬 button style */
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
   font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-5 {
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+.btn-hover.color-6 {
+  background-image: linear-gradient(to right, #009245, #fcee21, #00a8c5, #d9e021);
+  box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+
+.header-sort button {
+  margin-right: 15px;
+  text-align: center;
+}
+.fixed {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+}
+.hidden {
+  display: none;
+}
+
+/* localstorage */
+.reviewCountText {
+  font-weight: bold;
+  font-size: 20px;
+}
+#inputForm {
+  width: 65%;
+  height: 270px;
+  margin: auto;
+}
+#commentList {
+  width: 65%;
+  height: 500px;
+  margin-top: 10px;
+  margin: auto;
+  overflow-y: auto;
+  padding-top: 10px;
+}
+.noreview {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#inputForm {
+  background-color: #f9f9f9;
+  outline: 1px solid lightgray;
+  /* #5dc19b , #16aa52, #D7DE84 */
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+}
+
+#inputForm input,
+#reviewInput {
+  outline: 1px solid lightgray;
+  width: 15%;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
   text-align: left;
-  height: 20px;
+  margin-right: 10px;
+  border: 0;
+  font-size: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+#inputForm #reviewInput {
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+#inputForm button {
+  width: 15%;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  float: right;
+  background-color: #79bca4;
+  color: white;
+}
+#inputForm button:hover {
+  background-color: #d9534f;
+}
+.reviewItem {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+.comment-content {
+  display: flex;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 15px;
+  outline: 1px solid lightgray;
+  height: 100px;
+  background-color: f9f9f9;
+  font-size: 20px;
+}
+
+.passwordval {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.deleteButton,
+.updateButton {
+  background-color: #79bca4;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.deleteButton:hover,
+.updateButton:hover {
+  background-color: #d9534f;
+}
+
+/*index.html*/
+
+.pannel {
+  padding-top: 75px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.pannel-box {
+  /* background-color: yellow; */
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pannel-box-title {
+  color: #2bb673;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.pannel-box-text {
+  color: #30dd8a;
+  font-size: 20px;
+  text-align: center;
+  margin: 150px 50px;
+}
+
+.pannel-box-btn {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.pannel-box-btn a {
+  display: inline-block;
+  text-align: inherit;
+}
+
+.pannel-box-btn:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.pannel-box-btn:focus {
+  outline: none;
+}
+
+/* video */
+.back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .back-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .back-video {
+    width: auto;
+    height: 100%;
+  }
 }

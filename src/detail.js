@@ -44,11 +44,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       // 영화 상세 정보를 가져옵니다. detail과 credit정보를 한번에 함께 가져오려고 promise.all썻다.. 뭐라는지모르겟다..
       const [movieDetails, movieCredits] = await Promise.all([fetchMovieDetails(movieId), fetchMovieCredits(movieId)]);
-      // const [movieDetails, movieCredits, movieTrailer] = await Promise.all([fetchMovieDetails(movieId), fetchMovieCredits(movieId), fetchMovieTrailer(movieId)]);
       // 가져온 상세 정보를 표시합니다.
       displayDetail(movieDetails, movieCredits);
     } catch (error) {
-      console.error("Error fetching movie details, credits, or trailer:", error);
+      console.error("Error fetching movie details:", error);
     }
   }
 });
@@ -67,22 +66,22 @@ const createMovieDetail = (detail, credits) => {
     .map(person => person.name)
     .join(",");
   let detail_html = `
-    <div class="movie-detail-container">
-      <img src="https://image.tmdb.org/t/p/w500/${detail.poster_path}" alt="영화 이미지" class="movie-img"/>
-      <div class="movie-info">
-        <h2 class="movie-title">${detail.original_title}</h2>
-        <div class="movie-ratings">
-          <h4 class="movie-rate">⭐ ${detail.vote_average}</h4>
-          <span class="movie-vote">(${detail.vote_count}명)</span>
-        </div>
-        <div class="movie-detail">
-          <span class="movie-date">개봉연도: ${detail.release_date}</span>
-          <h3 class="movie-genres">장르: ${genres}</h3>
-          <h3 class="movie-director">감독: ${director ? director : "N/A"}</h3>
-          <h3 class="movie-cast">등장인물: ${majorCast}</h3>
-        </div>
-        <p class="movie-desc">${detail.overview}</p>
+  <div class="movie-detail-container">
+    <img src="https://image.tmdb.org/t/p/w500/${detail.poster_path}" alt="영화 이미지" class="movie-img"/>
+    <div class="movie-info">
+      <h2 class="movie-title">${detail.original_title}</h2>
+      <div class="movie-ratings">
+        <h4 class="movie-rate">⭐ ${detail.vote_average}</h4>
+        <span class="movie-vote">(${detail.vote_count}명)</span>
       </div>
-    </div>`;
+      <div class="movie-detail">
+        <span class="movie-date">개봉연도: ${detail.release_date}</span>
+        <h3 class="movie-genres">장르: ${genres}</h3>
+        <h3 class="movie-director">감독: ${director ? director : "N/A"}</h3>
+        <h3 class="movie-cast">등장인물: ${majorCast}</h3>
+      </div>
+      <p class="movie-desc">${detail.overview}</p>
+    </div>
+  </div>`;
   return detail_html;
 };

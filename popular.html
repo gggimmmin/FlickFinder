@@ -6,7 +6,8 @@
     <title>FlickFinder - Popular Movies</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script type="module" src="/src/popular.js"></script>
+    <script type="module" src="./src/searchEvent.js"></script>
+    <script type="module" src="./src/popular.js"></script>
   </head>
   <body>
     <header>
@@ -44,7 +45,7 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             class="lucide lucide-search"
-            style="transform: translate(40px, 7px)"
+            style="transform: translate(40px, 1px)"
           >
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
@@ -54,15 +55,20 @@
         <button id="search-btn">검색</button>
       </form>
       <div class="header-menu">
-        <button id="toprate"><a href="./index.html">TOP RATED</a></button>
-        <button id="popular">POPULAR</button>
+        <button id="toprate"><a href="./toprate.html">TOP RATED</a></button>
+        <button id="popular"><a href="./popular.html">POPULAR</a></button>
+        <button id="nowPlaying"><a href="./nowplaying.html">NOW PLAYING</a></button>
       </div>
     </header>
     <div class="header-box">
-      <img src="/img/movie-theater.jpg" />
+      <img src="img/movie-theater.jpg" />
       <div class="header-box_title">
         <h1>Popular Movies.</h1>
       </div>
+    </div>
+    <div class="header-sort" id="sortButton">
+      <button id="sorttoprate" class="btn-hover color-5">평점 순</button>
+      <button id="sortpopular" class="btn-hover color-6">인기도 순</button>
     </div>
     <ul id="card-list"></ul>
   </body>
